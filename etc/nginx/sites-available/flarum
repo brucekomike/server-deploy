@@ -1,0 +1,18 @@
+server {
+
+        listen [::]:80;
+        listen 80;
+        root /var/www/flarum/public;
+        include /var/www/flarum/.nginx.conf;
+
+        index index.php;
+
+        server_name pxn.ac.cn;
+
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+
+                fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+
+        }
+}

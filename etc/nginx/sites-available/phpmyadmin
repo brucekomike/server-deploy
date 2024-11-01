@@ -1,0 +1,20 @@
+server {
+        listen [::]:80;
+        listen 80;
+        root /var/www/phpmyadmin;
+
+        index index.php;
+
+        server_name phpmyadmin.example.com;
+
+        location / {
+                auth_basic "admin AREA";
+                auth_basic_user_file /etc/nginx/.htpasswd;
+                try_files $uri $uri/ =404;
+        }
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        }
+
+}
