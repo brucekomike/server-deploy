@@ -7,7 +7,7 @@ server {
         root /var/www/phproject;
         index index.php;
 
-        server_name project.example.com;
+        server_name <PLACE_HOLDER>;
 
         # Dynamic URLs
         location / {

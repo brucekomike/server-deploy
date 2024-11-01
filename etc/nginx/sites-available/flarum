@@ -7,7 +7,7 @@ server {
 
         index index.php;
 
-        server_name pxn.ac.cn;
+        server_name <PLACE_HOLDER>;
 
         location ~ \.php$ {
                 include snippets/fastcgi-php.conf;
