@@ -10,12 +10,15 @@
 source ./lib/*.sh
 check-root
 check-config
-check-ubuntu
-env-ubuntu
+
 #   ___ _ ____   __
 #  / _ \ '_ \ \ / /
 # |  __/ | | \ V / 
 #  \___|_| |_|\_/  
+if [ "OS_name" = "ubuntu" ]; then
+  check-ubuntu
+  env-ubuntu
+fi
 if [ "$use_proxy" = true ]; then set-proxy; fi
 
 #  _     _   _ __  __ ____  
@@ -35,6 +38,12 @@ if [ "$LNMP_flarum" = true ]; then LNMP-flarum; fi
 #  / _` |/ _ \ / __| |/ / _ \ '__|
 # | (_| | (_) | (__|   <  __/ |   
 #  \__,_|\___/ \___|_|\_\___|_|   
+if [ -f /.dockerenv ]; then
+  echo "Running inside a Docker container."
+else
+  echo "Not running inside a Docker container."
+  if [ "$DOCKER_install" = true ]; then DOCKER_install; f
+    # DOCKER_install wont run in docker
+fi
 
-if [ "$DOCKER_install" = true ]; then DOCKER_install; fi
 

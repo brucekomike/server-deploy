@@ -1,3 +1,18 @@
+
+#   ___  ____  
+#  / _ \/ ___| 
+# | | | \___ \ 
+# | |_| |___) |
+#  \___/|____/ 
+OS_name=ubuntu
+# currently only support ubuntu
+
+#  ____               __   __
+# |  _ \ _ __ _____  _\ \ / /
+# | |_) | '__/ _ \ \/ /\ V / 
+# |  __/| | | (_) >  <  | |  
+# |_|   |_|  \___/_/\_\ |_|  
+
 # proxy conf for specific network environments
 # please use 
 #
@@ -12,6 +27,7 @@ use_proxy=false
 
 # domain config
 # please change this
+# the default place holder is "<PLACE_HOLDER>",
 DOMAIN=example.com
 
 # cloudflare cert setting (currently no use)
@@ -30,4 +46,9 @@ LNMP_nextcloud=false
 LNMP_phpmyadmin=false
 LNMP_flarum=false
 
+#      _            _             
+#   __| | ___   ___| | _____ _ __ 
+#  / _` |/ _ \ / __| |/ / _ \ '__|
+# | (_| | (_) | (__|   <  __/ |   
+#  \__,_|\___/ \___|_|\_\___|_|   
 DOCKER_install=false
