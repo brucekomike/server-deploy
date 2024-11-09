@@ -1,4 +1,4 @@
-
+d
 #   ___  ____  
 #  / _ \/ ___| 
 # | | | \___ \ 
@@ -6,6 +6,10 @@
 #  \___/|____/ 
 OS_name=ubuntu
 # currently only support ubuntu
+init_system=systemd
+# currently only support systemd
+web_server=nginx
+# currently only support nginx
 
 #  ____               __   __
 # |  _ \ _ __ _____  _\ \ / /
@@ -46,9 +50,25 @@ LNMP_nextcloud=false
 LNMP_phpmyadmin=false
 LNMP_flarum=false
 
+FLARUM_prefix=flarum
+WIKI_prefix=wiki
+MTT_prefix=mtt
+CLOUD_prefix=cloud
+MPANEl_prefix=phpmyadmin
+
 #      _            _             
 #   __| | ___   ___| | _____ _ __ 
 #  / _` |/ _ \ / __| |/ / _ \ '__|
 # | (_| | (_) | (__|   <  __/ |   
 #  \__,_|\___/ \___|_|\_\___|_|   
 DOCKER_install=false
+
+
+if [ "$init_system" = "systemd" ]; then
+  DAEMON_restart="systemctl restart "
+  DAEMON_reload="systemctl reload "
+  DAEMON_start="systemctl start "
+  DAMMON_stop="systemctl stop "
+fi
+
+

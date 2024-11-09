@@ -42,7 +42,7 @@ if [ -f /.dockerenv ]; then
   echo "Running inside a Docker container."
 else
   echo "Not running inside a Docker container."
-  if [ "$DOCKER_install" = true ]; then DOCKER_install; f
+  if [ "$DOCKER_install" = true ]; then DOCKER-install; fi
     # DOCKER_install wont run in docker
 fi
 

@@ -1,3 +1,5 @@
+# mediawiki version: 1.42.3
+
 function LNMP-mediawiki(){
   # install dependence
   apt install php-fpm php-mysql php-xml php-mbstring php-intl php-curl php-apcu php-gd
@@ -10,7 +12,18 @@ function LNMP-mediawiki(){
   cp ./etc/nginx/sites-available/mediawiki /etc/nginx/sites-available/mediawiki
   config_file=/etc/nginx/sites-available/mediawiki
   old_domain="<PLACE_HOLDER>"
-  new_domain="wiki.$DOMAIN"
+  new_domain="$WIKI_prefix.$DOMAIN"
   regex="s/\(server_name[^*]*\)$old_domain\([^;]*;\)/\1$new_domain\2/g"
   sed -ir $regex $config_file
+}
+
+function toggle-mediawiki(){
+  if [ "$command"="enable" ]
+    ln -s /etc/nginx/sites-available/mediawiki /etc/nginx/sites-enabled
+    $DAEMON_reload $web_server
+  fi
+  if [ "$command"="disable"]
+    rm /etc/nginx/sites-enabled/mediawiki
+    $DAEMON_reload $web_server
+  fi
 }
