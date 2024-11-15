@@ -18,15 +18,15 @@ do
   source "$script"
   fi
 done
-source ./lib/*.sh
 check-root
 check-config
-
+#source config.sh
 #   ___ _ ____   __
 #  / _ \ '_ \ \ / /
 # |  __/ | | \ V / 
 #  \___|_| |_|\_/  
-if [ "OS_name" = "ubuntu" ]; then
+echo current sellected system: "$OS_name"
+if [ "$OS_name" = "ubuntu" ]; then
   check-ubuntu
   env-ubuntu
 fi
