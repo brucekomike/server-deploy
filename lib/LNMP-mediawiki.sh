@@ -18,11 +18,11 @@ function LNMP-mediawiki(){
 }
 
 function toggle-mediawiki(){
-  if [ "$command"="enable" ]
+  if [ "$command"="enable" ]; then
     ln -s /etc/nginx/sites-available/mediawiki /etc/nginx/sites-enabled
     $DAEMON_reload $web_server
   fi
-  if [ "$command"="disable"]
+  if [ "$command"="disable"]; then
     rm /etc/nginx/sites-enabled/mediawiki
     $DAEMON_reload $web_server
   fi

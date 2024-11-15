@@ -1,8 +1,10 @@
 function check-ubuntu(){
 # detect if script is run on Ubuntu
-if ! grep -q 'Ubuntu' /etc/os-release
- then
+if ! grep -Fxq 'Ubuntu' /etc/os-release ;then
    echo "This script currently only support ubuntu"
-   exit 1
+   EXIT_CODE=1
+   custom-exit
+ else
+   echo "ubuntu check passed"
  fi
 }

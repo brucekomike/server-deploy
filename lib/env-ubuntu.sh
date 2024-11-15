@@ -8,6 +8,7 @@ function env-ubuntu(){
 }
 
 function set-proxy(){
+  echo setting proxy
   export http_proxy="$ProxyDest"
   export https_proxy="$ProxyDest"
 

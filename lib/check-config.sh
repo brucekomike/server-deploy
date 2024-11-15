@@ -6,9 +6,11 @@ function check-config(){
     echo "config file have not been created, creating from example file..."
     cp "$source_file" "$file"
     echo "please edit the config.sh and rerun the install script"
-    exit 0
+    EXIT_CODE=0
+    custom-exit
   else
     echo "config file already exists. start install process"
+    source "$file"
   fi
 
 }

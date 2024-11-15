@@ -1,4 +1,3 @@
-# 
 function LNMP-mediawiki(){
   # install dependence
   # download and extract the archive
@@ -16,11 +15,11 @@ function LNMP-mediawiki(){
 }
 
 function toggle-mytinytodo(){
-  if [ "$command"="enable" ]
+  if [ "$command"="enable" ]; then
     ln -s /etc/nginx/sites-available/mytinytodo /etc/nginx/sites-enabled
     $DAEMON_reload $web_server
   fi
-  if [ "$command"="disable"]
+  if [ "$command"="disable"]; then
     rm /etc/nginx/sites-enabled/mytinytodo
     $DAEMON_reload $web_server
   fi
