@@ -4,12 +4,13 @@ function env-ubuntu(){
   export working_dir=$(pwd)
   export www_dir="/var/www"
   apt update
-  apt upgrade
+  apt upgrade -y
+  export package_install="apt install -y"
 }
 
 function set-proxy(){
   echo setting proxy
-  export http_proxy="$ProxyDest"
+  #export http_proxy="$ProxyDest"
   export https_proxy="$ProxyDest"
 
   cp ./etc/apt/apt.conf.d/99-proxy.conf /etc/apt/apt.conf.d/99-proxy.conf

@@ -2,7 +2,7 @@ function LNMP-mediawiki(){
   # install dependence
   # download and extract the archive
   $web_user_do wget https://github.com/maxpozdeev/mytinytodo/releases/download/v1.8.1/mytinytodo-v1.8.1.tar.gz -O ./www/mytinytodo-v1.8.1.tar.gz
-  $web_user_do unzip ./www/mytinytodo-v1.8.1.tar.gz -d ./www
+  $web_user_do tar zxf ./www/mytinytodo-v1.8.1.tar.gz -d ./www
   # link folder
   ln -s "$working_dir/www/mytinytodo" $www_dir
   # copy nginx config
