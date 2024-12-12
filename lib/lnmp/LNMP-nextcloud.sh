@@ -1,4 +1,5 @@
 function LNMP-nextcloud(){
+  LNMP-base
   $package_install php-zip php-mysql php-xml php-mbstring php-gd php-curl php-apcu
   $package_install php-bcmath php-gmp php-intl php-imagick imagemagick
   # install dependence

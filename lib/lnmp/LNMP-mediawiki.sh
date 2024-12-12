@@ -1,6 +1,7 @@
 # mediawiki version: 1.42.3
 
 function LNMP-mediawiki(){
+  LNMP-base
   # install dependence
   $package_install php-fpm php-mysql php-xml php-mbstring php-intl php-curl php-apcu php-gd
   # download and extract the archive

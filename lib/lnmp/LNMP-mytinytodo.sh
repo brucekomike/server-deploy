@@ -1,4 +1,5 @@
 function LNMP-mediawiki(){
+  LNMP-base
   # install dependence
   # download and extract the archive
   $web_user_do wget https://github.com/maxpozdeev/mytinytodo/releases/download/v1.8.1/mytinytodo-v1.8.1.tar.gz -O ./www/mytinytodo-v1.8.1.tar.gz

@@ -1,4 +1,5 @@
 #!/bin/bash
+function toggle-LNMP.sh(){
 
 source ./config.sh
 
@@ -51,3 +52,4 @@ case $command in
 esac
 
 
+}
