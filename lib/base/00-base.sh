@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# A best practices Bash script template with many useful functions. This file
-# combines the source.sh & script.sh files into a single script. If you want
-# your script to be entirely self-contained then this should be what you want!
-
 # Enable xtrace if the DEBUG environment variable is set
 if [[ ${DEBUG-} =~ ^1|yes|true$ ]]; then
     set -o xtrace       # Trace the execution of the script (debug)
@@ -316,7 +312,7 @@ function pretty_print() {
 # OUTS: None
 # RETS: None
 function journal_init() {
-    if [[ -n ${verbose-} ]]; then
+    if [[ -n ${VERBOSE-} ]]; then
     #pretty_print "$@"
     #echo verbose enabled
     verbose_print() { pretty_print "$@"; }
@@ -325,6 +321,7 @@ function journal_init() {
     verbose_print() { :; }
     fi
     declare -f verbose_print > /dev/null
+    verbose_print "you have verbose mode enabled"
 }
 
 # DESC: Combines two path variables and removes any duplicates
@@ -443,20 +440,6 @@ function run_as_root() {
     fi
 }
 
-# DESC: Usage help
-# ARGS: None
-# OUTS: None
-# RETS: None
-function script_usage() {
-    cat << EOF
-Usage:
-     -h|--help                  Displays this help
-     -v|--verbose               Displays verbose output
-    -nc|--no-colour             Disables colour output
-    -cr|--cron                  Run silently unless we encounter an error
-EOF
-}
-
 # DESC: Parameter parser
 # ARGS: $@ (optional): Arguments provided to the script
 # OUTS: Variables indicating command-line parameters and options
@@ -481,7 +464,7 @@ function parse_params() {
                 cron=true
                 ;;
             *)
-                script_exit "Invalid parameter was provided: $param" 1
+                #script_exit "Invalid parameter was provided: $param" 1
                 ;;
         esac
     done
@@ -491,17 +474,7 @@ function parse_params() {
 # OUTS: None
 # RETS: None
 function main() {
-    trap script_trap_err ERR
-    trap script_trap_exit EXIT
 
-    script_init "$@"
-    parse_params "$@"
-    journal_init
-    cron_init
-    colour_init
-    #lock_init system
-    verbose_print "test"
-    verbose_print "test"
     verbose_print "test"
 }
 
