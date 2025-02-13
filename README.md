@@ -11,7 +11,7 @@ git clone https://github.com/brucekomike/bash-project-template frameworker
 then use `mod install` to get this project
 ```
 cd frameworker
-frameworker.sh mod install https://github.com/brucekomike/server-deploy deploy
+frameworker.sh mod install https://github.com/brucekomike/server-deploy deployer
 ```
 
 

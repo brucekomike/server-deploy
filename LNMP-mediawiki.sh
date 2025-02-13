@@ -5,12 +5,12 @@ function LNMP-mediawiki(){
   # install dependence
   $package_install php-fpm php-mysql php-xml php-mbstring php-intl php-curl php-apcu php-gd
   # download and extract the archive
-  $web_user_do wget https://releases.wikimedia.org/mediawiki/1.42/mediawiki-1.42.3.zip -O ./www/mediawiki-1.42.3.zip
-  $web_user_do unzip ./www/mediawiki-1.42.3.zip -d ./www
+  $web_user_do wget https://releases.wikimedia.org/mediawiki/1.42/mediawiki-1.42.3.zip -O $scripts_DIR/www/mediawiki-1.42.3.zip
+  $web_user_do unzip $scripts_DIR/www/mediawiki-1.42.3.zip -d $scripts_DIR/www
   # link folder
-  ln -s "$working_dir/www/mediawiki-1.42.3" $www_dir
+  ln -s "$scripts_DIR/www/mediawiki-1.42.3" $www_dir
   # copy nginx config
-  cp ./etc/nginx/sites-available/mediawiki /etc/nginx/sites-available/mediawiki
+  cp $scripts_DIR/etc/nginx/sites-available/mediawiki /etc/nginx/sites-available/mediawiki
   config_file=/etc/nginx/sites-available/mediawiki
   old_domain="<PLACE_HOLDER>"
   new_domain="$WIKI_prefix.$DOMAIN"
