@@ -1,5 +1,5 @@
-function mediawiki-git(){
-  LNMP_base
+function LNMP-mediawiki-git(){
+  LNMP-base
   mediawiki-git-main
   mediawiki-git-linking
   $run_as_user php maintenance/run.php update
