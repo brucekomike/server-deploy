@@ -5,7 +5,10 @@ function LNMP_list(){
 }
 function LNMP_install(){
     case "$1" in
-        mediawki)
+        base)
+        LNMP-base
+        ;;
+        mediawiki)
         LNMP-mediawki
         ;;
         mytinytodo)
