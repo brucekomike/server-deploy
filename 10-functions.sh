@@ -9,7 +9,10 @@ function LNMP_install(){
         LNMP-base
         ;;
         mediawiki)
-        LNMP-mediawki
+        LNMP-mediawiki
+        ;;
+        mediawiki-git)
+        LNMP-mediawiki-git
         ;;
         mytinytodo)
         LNMP-mytinytodo
